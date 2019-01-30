@@ -1,0 +1,8 @@
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.exe.config
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.exe
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.pdb
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\Ninject.dll
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\Ninject.xml
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.exe
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.pdb
+D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.csprojResolveAssemblyReference.cache
