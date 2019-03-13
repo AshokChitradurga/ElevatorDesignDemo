@@ -8,13 +8,12 @@ namespace ElevatorDemoSolution
 {
     class Program
     {
+        // more chages add as part of this solution.
         static void Main(string[] args)
         {
 
              Singleton.Instance.Y();
              Singleton.Instance.Y();
-
-           
 
             DependencyResolver.Instance.SessionT.Test();
             DependencyResolver.Instance.SessionT.Test();
