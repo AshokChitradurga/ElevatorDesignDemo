@@ -17,6 +17,7 @@ namespace ElevatorDemoSolution
         private SortedSet<int> floorToStopDown = new SortedSet<int>();
         Object _lock = new object();
         IElevatorAction _elevatorAction;
+        ElevatorActionInvoker _invoker;
 
         public ElevatorMovingDirection ElevatorMovingDirection { get; set; }
         public ElevatorStatus ElevatorStatus { get; set; }
@@ -31,6 +32,7 @@ namespace ElevatorDemoSolution
             max = _elevatorsettings.ElevatorConfig.MaxFloor;
             ElevatorStatus = ElevatorStatus.Ideal;
             _elevatorAction = DependencyResolver.Instance.GetDependency<IElevatorAction>();
+            _invoker = new ElevatorActionInvoker();
         }
 
         public int CurrentFloor
@@ -51,9 +53,17 @@ namespace ElevatorDemoSolution
 
             if ((ElevatorStatus == ElevatorStatus.MovingUp) ||
                 (ElevatorStatus == ElevatorStatus.Ideal && CurrentFloor < floorNumber))
+            {
                 floorToStopUp.Add(floorNumber);
+                _invoker.ActionCtx = DependencyResolver.Instance.GetDependencyByName<IElevatorActionCtx>("up");
+                _invoker.GetElevatorAction();
+            }
             else
+            {
                 floorToStopDown.Add(floorNumber);
+                _invoker.ActionCtx = DependencyResolver.Instance.GetDependencyByName<IElevatorActionCtx>("down");
+                _invoker.GetElevatorAction();
+            }
 
             _elevatorAction.Elevator = actionelevator;
             _elevatorAction.Move(ElevatorStatus);
@@ -69,7 +79,6 @@ namespace ElevatorDemoSolution
                 nearestStoppage = floorToStopDown.Max;
             }
             return nearestStoppage.Value;
-
         }
     }
 }

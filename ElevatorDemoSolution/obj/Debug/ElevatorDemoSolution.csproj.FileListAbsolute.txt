@@ -6,3 +6,10 @@ D:\XyzOmTestSolution\Root\ElevatorDemoSolution\bin\Debug\Ninject.xml
 D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.exe
 D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.pdb
 D:\XyzOmTestSolution\Root\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.csprojResolveAssemblyReference.cache
+D:\ElevatorDesign\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.exe.config
+D:\ElevatorDesign\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.exe
+D:\ElevatorDesign\ElevatorDemoSolution\bin\Debug\ElevatorDemoSolution.pdb
+D:\ElevatorDesign\ElevatorDemoSolution\bin\Debug\Ninject.xml
+D:\ElevatorDesign\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.csprojResolveAssemblyReference.cache
+D:\ElevatorDesign\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.exe
+D:\ElevatorDesign\ElevatorDemoSolution\obj\Debug\ElevatorDemoSolution.pdb

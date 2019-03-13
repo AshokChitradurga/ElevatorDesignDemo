@@ -143,4 +143,44 @@ namespace ElevatorDemoSolution
             _elevator.ElevatorStatus = staus;
         }
     }
+
+    public interface IElevatorActionCtx
+    {
+        void Move();
+    }
+
+    public class ElevatorActionInvoker
+    {
+        public IElevatorActionCtx ActionCtx { get; set; }
+
+        public void GetElevatorAction()
+        {
+            ActionCtx.Move();
+        }
+    }
+
+    public class ElevatorMoveUp : IElevatorActionCtx
+    {
+        public ElevatorMoveUp()
+        {
+
+        }
+        public void Move()
+        {
+
+        }
+    }
+
+    public class ElevatorMoveDown : IElevatorActionCtx
+    {
+        public ElevatorMoveDown()
+        {
+
+        }
+
+        public void Move()
+        {
+
+        }
+    }
 }

@@ -49,17 +49,17 @@ namespace ElevatorDemoSolution
         {
             var stoppageFloor = _elevatorsettings.ElevatorConfig.StoppagePoints;
 
-            Task t = Task.Run(() =>
-            {
-                for (int elcount = 0; elcount < numElevators; elcount++)
-                    elevators[elcount].AddStoppage(stoppageFloor[elcount], elevators[elcount]);
-            });
+            //Task t = Task.Run(() =>
+            //{
+            for (int elcount = 0; elcount < numElevators; elcount++)
+                elevators[elcount].AddStoppage(stoppageFloor[elcount], elevators[elcount]);
+            //});
             Console.WriteLine("Elevators stared operating. please give below information to check nearest floor");
             Console.Write("Enter the floor to calculate closer elevator for you: ");
             var cfloor = Console.ReadLine().Trim();
             Console.Write("Enter the direction(1/0): ");
             var direction = Console.ReadLine().Trim();
-            t.Wait();
+            //t.Wait();
             var nElevator = FindClosetElevator(int.Parse(direction), int.Parse(cfloor));
             Console.WriteLine(string.Format("The closet elevator is {0} and it is at {1} floor",
                 nElevator.Name, nElevator.CurrentFloor));
@@ -116,7 +116,7 @@ namespace ElevatorDemoSolution
 
             if (elevator.ElevatorStatus == ElevatorStatus.MovingUp)
             {
-                holdelevator = elevators.ToList().FindIndex(el => el.HoldElevator && 
+                holdelevator = elevators.ToList().FindIndex(el => el.HoldElevator &&
                 (elevator.CurrentFloor + 1) == el.GetNearestStoppage() && el.ElevatorStatus == ElevatorStatus.MovingUp);
                 if (holdelevator > -1)
                 {

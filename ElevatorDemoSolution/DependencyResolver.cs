@@ -20,8 +20,10 @@ namespace ElevatorDemoSolution
         public override void Load()
         {
             Bind<IElevatorBuilder>().To<PassangerElevator>();
-            Bind<IElevatorAction>().To<ElevatorAction>();   
+            Bind<IElevatorAction>().To<ElevatorAction>();
             Bind<IElevatorController>().To<ElevatorController>();
+            //  Bind<IElevatorActionCtx>().ToSelf().To<ElevatorMoveUp>().Named("up");
+            Bind<IElevatorActionCtx>().To<ElevatorMoveDown>().Named("down");
         }
         public static DependencyResolver Instance
         {
@@ -49,6 +51,58 @@ namespace ElevatorDemoSolution
         public T GetDependency<T>()
         {
             return kernel.Get<T>();
+        }
+
+        public T GetDependencyByName<T>(string name)
+        {
+            return kernel.Get<T>(name);
+        }
+
+        public ITy SessionT
+        {
+            get
+            {
+                return new IT();
+            }
+        }
+    }
+
+    public class IT : ITy
+    {
+        public IT()
+        {
+
+        }
+
+        public void Test()
+        {
+            
+        }
+    }
+
+    public interface ITy
+    {
+        void Test();
+    }
+
+
+    public sealed class Singleton
+    {
+        private Singleton()
+        {
+        }
+        private static readonly Lazy<Singleton> lazy = new Lazy<Singleton>(() => new Singleton());
+        public static Singleton Instance
+        {
+            get
+            {
+                return lazy.Value;
+            }
+        }
+
+        public void Y()
+        {
+
         }
     }
 }
