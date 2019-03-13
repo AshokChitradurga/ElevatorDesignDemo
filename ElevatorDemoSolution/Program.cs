@@ -8,7 +8,11 @@ namespace ElevatorDemoSolution
 {
     class Program
     {
+<<<<<<< HEAD
         // more chages add as part of this solution.
+=======
+        //  Main program changes.
+>>>>>>> e2bc007f2a73a5af3b13719e1789afbc653c57e4
         static void Main(string[] args)
         {
 
